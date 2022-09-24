@@ -21,52 +21,13 @@ namespace MyProject
     /// </summary>
     public partial class Home : Window
     {
-        DispatcherTimer timer;
-        double panelWidth;
-        bool hidden;
         public Home()
         {
             InitializeComponent();
-            this.MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
-            timer = new DispatcherTimer();
-            timer.Interval = new TimeSpan(0, 0, 0, 0, 10);
-            timer.Tick += Timer_Tick;
-            panelWidth = sidePanel.Width;
 
             DataContext = new CategoryViewModels();
 
         }
-
-
-        private void Timer_Tick(object? sender, EventArgs e)
-        {
-            if (hidden)
-            {
-                sidePanel.Width += 5;
-                if (sidePanel.Width >= panelWidth)
-                {
-                    timer.Stop();
-                    hidden = false;
-                }
-            }
-            else
-            {
-                sidePanel.Width -= 5;
-                if (sidePanel.Width <= 35)
-                {
-                    timer.Stop();
-                    hidden = true;
-                }
-            }
-        }
-
-       
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            timer.Start();
-        }
-
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             Close();
@@ -100,35 +61,27 @@ namespace MyProject
             
                 this.WindowState = WindowState.Minimized;
         }
-        
-
-        private void ListViewItem_Selected(object sender, RoutedEventArgs e)
-        {
-            DataContext = new CategoryViewModels(); 
-        }
-
-        private void ListViewItem_Selected_1(object sender, RoutedEventArgs e)
+        private void user_Click(object sender, RoutedEventArgs e)
         {
             Login login = new Login();
             login.Show();
             this.Close();
         }
-       
-        private void ListViewItem_Selected_2(object sender, RoutedEventArgs e)
+
+        private void home_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new CategoryViewModels();
+        }
+
+        private void setting_Click(object sender, RoutedEventArgs e)
         {
             DataContext = new CustomerViewModels();
 
         }
 
-        private void ListViewItem_Selected_3(object sender, RoutedEventArgs e)
+        private void mail_Click(object sender, RoutedEventArgs e)
         {
             DataContext = new ProductViewModels();
-
-
         }
-
-
-
-
     }
 }

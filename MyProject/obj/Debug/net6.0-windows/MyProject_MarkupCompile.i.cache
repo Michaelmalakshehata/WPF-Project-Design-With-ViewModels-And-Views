@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-F:\Important\wpf work\wpf project 2\MyProject\obj\Debug\net6.0-windows\
+C:\Users\NoteBook\OneDrive\Desktop\1\wpf project 2\MyProject\obj\Debug\net6.0-windows\
 MyProject
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-F:\Important\wpf work\wpf project 2\MyProject\App.xaml
-9-107271543
+C:\Users\NoteBook\OneDrive\Desktop\1\wpf project 2\MyProject\App.xaml
+10-383214626
 
 161373049792
 1942007414746
-ForgotPassword.xaml;Home.xaml;Login.xaml;Register.xaml;Resources\ButtonStyle.xaml;SerialNumber.xaml;Views\CategoryView.xaml;Views\CustomerView.xaml;Views\ProductView.xaml;
+ForgotPassword.xaml;Home.xaml;Login.xaml;Register.xaml;Resources\ButtonStyle.xaml;Resources\Dock Style.xaml;SerialNumber.xaml;Views\CategoryView.xaml;Views\CustomerView.xaml;Views\ProductView.xaml;
 
-False
+True
 

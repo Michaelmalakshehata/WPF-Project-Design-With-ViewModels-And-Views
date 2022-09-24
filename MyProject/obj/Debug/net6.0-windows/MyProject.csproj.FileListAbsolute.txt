@@ -191,3 +191,42 @@ F:\Important\wpf work\wpf project 2\MyProject\obj\Debug\net6.0-windows\Generated
 F:\Important\wpf work\wpf project 2\MyProject\obj\Debug\net6.0-windows\Views\CategoryView.baml
 F:\Important\wpf work\wpf project 2\MyProject\obj\Debug\net6.0-windows\Views\CustomerView.baml
 F:\Important\wpf work\wpf project 2\MyProject\obj\Debug\net6.0-windows\Views\ProductView.baml
+C:\Users\NoteBook\OneDrive\Desktop\1\wpf project 2\MyProject\bin\Debug\net6.0-windows\MyProject.exe
+C:\Users\NoteBook\OneDrive\Desktop\1\wpf project 2\MyProject\bin\Debug\net6.0-windows\MyProject.deps.json
+C:\Users\NoteBook\OneDrive\Desktop\1\wpf project 2\MyProject\bin\Debug\net6.0-windows\MyProject.runtimeconfig.json
+C:\Users\NoteBook\OneDrive\Desktop\1\wpf project 2\MyProject\bin\Debug\net6.0-windows\MyProject.dll
+C:\Users\NoteBook\OneDrive\Desktop\1\wpf project 2\MyProject\bin\Debug\net6.0-windows\MyProject.pdb
+C:\Users\NoteBook\OneDrive\Desktop\1\wpf project 2\MyProject\obj\Debug\net6.0-windows\MyProject.csproj.AssemblyReference.cache
+C:\Users\NoteBook\OneDrive\Desktop\1\wpf project 2\MyProject\obj\Debug\net6.0-windows\Resources\ButtonStyle.baml
+C:\Users\NoteBook\OneDrive\Desktop\1\wpf project 2\MyProject\obj\Debug\net6.0-windows\Resources\Dock Style.baml
+C:\Users\NoteBook\OneDrive\Desktop\1\wpf project 2\MyProject\obj\Debug\net6.0-windows\ForgotPassword.g.cs
+C:\Users\NoteBook\OneDrive\Desktop\1\wpf project 2\MyProject\obj\Debug\net6.0-windows\Home.g.cs
+C:\Users\NoteBook\OneDrive\Desktop\1\wpf project 2\MyProject\obj\Debug\net6.0-windows\Login.g.cs
+C:\Users\NoteBook\OneDrive\Desktop\1\wpf project 2\MyProject\obj\Debug\net6.0-windows\Register.g.cs
+C:\Users\NoteBook\OneDrive\Desktop\1\wpf project 2\MyProject\obj\Debug\net6.0-windows\SerialNumber.g.cs
+C:\Users\NoteBook\OneDrive\Desktop\1\wpf project 2\MyProject\obj\Debug\net6.0-windows\Views\CategoryView.g.cs
+C:\Users\NoteBook\OneDrive\Desktop\1\wpf project 2\MyProject\obj\Debug\net6.0-windows\Views\CustomerView.g.cs
+C:\Users\NoteBook\OneDrive\Desktop\1\wpf project 2\MyProject\obj\Debug\net6.0-windows\Views\ProductView.g.cs
+C:\Users\NoteBook\OneDrive\Desktop\1\wpf project 2\MyProject\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\NoteBook\OneDrive\Desktop\1\wpf project 2\MyProject\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\NoteBook\OneDrive\Desktop\1\wpf project 2\MyProject\obj\Debug\net6.0-windows\MyProject_MarkupCompile.cache
+C:\Users\NoteBook\OneDrive\Desktop\1\wpf project 2\MyProject\obj\Debug\net6.0-windows\MyProject_MarkupCompile.lref
+C:\Users\NoteBook\OneDrive\Desktop\1\wpf project 2\MyProject\obj\Debug\net6.0-windows\App.baml
+C:\Users\NoteBook\OneDrive\Desktop\1\wpf project 2\MyProject\obj\Debug\net6.0-windows\ForgotPassword.baml
+C:\Users\NoteBook\OneDrive\Desktop\1\wpf project 2\MyProject\obj\Debug\net6.0-windows\Home.baml
+C:\Users\NoteBook\OneDrive\Desktop\1\wpf project 2\MyProject\obj\Debug\net6.0-windows\Login.baml
+C:\Users\NoteBook\OneDrive\Desktop\1\wpf project 2\MyProject\obj\Debug\net6.0-windows\Register.baml
+C:\Users\NoteBook\OneDrive\Desktop\1\wpf project 2\MyProject\obj\Debug\net6.0-windows\SerialNumber.baml
+C:\Users\NoteBook\OneDrive\Desktop\1\wpf project 2\MyProject\obj\Debug\net6.0-windows\Views\CategoryView.baml
+C:\Users\NoteBook\OneDrive\Desktop\1\wpf project 2\MyProject\obj\Debug\net6.0-windows\Views\CustomerView.baml
+C:\Users\NoteBook\OneDrive\Desktop\1\wpf project 2\MyProject\obj\Debug\net6.0-windows\Views\ProductView.baml
+C:\Users\NoteBook\OneDrive\Desktop\1\wpf project 2\MyProject\obj\Debug\net6.0-windows\MyProject.g.resources
+C:\Users\NoteBook\OneDrive\Desktop\1\wpf project 2\MyProject\obj\Debug\net6.0-windows\MyProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\NoteBook\OneDrive\Desktop\1\wpf project 2\MyProject\obj\Debug\net6.0-windows\MyProject.AssemblyInfoInputs.cache
+C:\Users\NoteBook\OneDrive\Desktop\1\wpf project 2\MyProject\obj\Debug\net6.0-windows\MyProject.AssemblyInfo.cs
+C:\Users\NoteBook\OneDrive\Desktop\1\wpf project 2\MyProject\obj\Debug\net6.0-windows\MyProject.csproj.CoreCompileInputs.cache
+C:\Users\NoteBook\OneDrive\Desktop\1\wpf project 2\MyProject\obj\Debug\net6.0-windows\MyProject.dll
+C:\Users\NoteBook\OneDrive\Desktop\1\wpf project 2\MyProject\obj\Debug\net6.0-windows\refint\MyProject.dll
+C:\Users\NoteBook\OneDrive\Desktop\1\wpf project 2\MyProject\obj\Debug\net6.0-windows\MyProject.pdb
+C:\Users\NoteBook\OneDrive\Desktop\1\wpf project 2\MyProject\obj\Debug\net6.0-windows\MyProject.genruntimeconfig.cache
+C:\Users\NoteBook\OneDrive\Desktop\1\wpf project 2\MyProject\obj\Debug\net6.0-windows\ref\MyProject.dll

@@ -45,6 +45,9 @@
     <Page Update="Resources\ButtonStyle.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Resources\Dock Style.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="SerialNumber.xaml">
       <SubType>Designer</SubType>
     </Page>

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Important\\wpf work\\wpf project 2\\MyProject\\MyProject.csproj": {}
+    "C:\\Users\\NoteBook\\OneDrive\\Desktop\\1\\wpf project 2\\MyProject\\MyProject.csproj": {}
   },
   "projects": {
-    "F:\\Important\\wpf work\\wpf project 2\\MyProject\\MyProject.csproj": {
+    "C:\\Users\\NoteBook\\OneDrive\\Desktop\\1\\wpf project 2\\MyProject\\MyProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Important\\wpf work\\wpf project 2\\MyProject\\MyProject.csproj",
+        "projectUniqueName": "C:\\Users\\NoteBook\\OneDrive\\Desktop\\1\\wpf project 2\\MyProject\\MyProject.csproj",
         "projectName": "MyProject",
-        "projectPath": "F:\\Important\\wpf work\\wpf project 2\\MyProject\\MyProject.csproj",
+        "projectPath": "C:\\Users\\NoteBook\\OneDrive\\Desktop\\1\\wpf project 2\\MyProject\\MyProject.csproj",
         "packagesPath": "C:\\Users\\NoteBook\\.nuget\\packages\\",
-        "outputPath": "F:\\Important\\wpf work\\wpf project 2\\MyProject\\obj\\",
+        "outputPath": "C:\\Users\\NoteBook\\OneDrive\\Desktop\\1\\wpf project 2\\MyProject\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
