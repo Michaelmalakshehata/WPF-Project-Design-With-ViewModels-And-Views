@@ -67,19 +67,19 @@ namespace MyProject
             login.Show();
             this.Close();
         }
-
-        private void home_Click(object sender, RoutedEventArgs e)
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
             DataContext = new CategoryViewModels();
+
         }
 
-        private void setting_Click(object sender, RoutedEventArgs e)
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
         {
             DataContext = new CustomerViewModels();
 
         }
 
-        private void mail_Click(object sender, RoutedEventArgs e)
+        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
         {
             DataContext = new ProductViewModels();
         }

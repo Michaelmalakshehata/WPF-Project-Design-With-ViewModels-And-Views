@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
               d:DesignHeight="600" d:DesignWidth="850">
     <Viewbox>
-        <Grid >
+        <Grid Background="#B0B7C0">
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="100">
@@ -21,19 +21,19 @@
                 <ColumnDefinition Width="*">
                 </ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Grid.Background>
+            <!--<Grid.Background>
                 <LinearGradientBrush>
                     <GradientStop Color="#204da5" Offset="0.0"/>
                     <GradientStop Color="#6cc4d5" Offset="1"/>
                 </LinearGradientBrush>
-            </Grid.Background>
+            </Grid.Background>-->
 
             <StackPanel Margin="15" FlowDirection="RightToLeft" Orientation="Horizontal" Grid.Row="0" Grid.Column="1" >
 
 
 
                 <TextBlock Text="أسم المنتج"
-                               Foreground="DarkGray"
+                               Foreground="White"
                                FontSize="12"
                                FontWeight="Medium"
                                FontFamily="Montserrat"
@@ -43,7 +43,7 @@
                 <TextBox x:Name="txtUser"
                              Height="38"
                              Margin=" 10 0 0 0"
-                             Width="200">
+                             Width="200" BorderBrush="White">
                     <TextBox.Background>
                         <ImageBrush 
                                         Stretch="None"

@@ -24,14 +24,399 @@
         <DataTemplate x:Name="categoryViewTemplate" DataType="{x:Type viewmodels:CategoryViewModels}">
             <views:CategoryView DataContext="{Binding}"/>
         </DataTemplate>
+        <Style x:Key="Main_MenuItem"
+               TargetType="MenuItem">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type MenuItem}">
+                        <Border x:Name="border"
+                                Background="#363435"
+                                BorderThickness="0">
+                            <Grid>
+                                <!--// Icon //-->
+                                <ContentPresenter ContentSource="Icon"
+                                                  HorizontalAlignment="Left"
+                                                  VerticalAlignment="Center"
+                                                  Height="22"
+                                                  Width="22"
+                                                  Margin="8,0,0,0" />
+                                <!--// Text //-->
+                                <ContentPresenter ContentSource="Header"
+                                                  TextBlock.Foreground="#D3D7DC"
+                                                  TextBlock.FontFamily="Rubik Medium"
+                                                  TextBlock.FontSize="15"
+                                                  HorizontalAlignment="Left"
+                                                  VerticalAlignment="Center"
+                                                  Margin="40,0,0,0" />
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsHighlighted"
+                                     Value="True">
+                                <Setter Property="Background"
+                                        TargetName="border"
+                                        Value="#524E4F" />
+                                <Setter Property="BorderBrush"
+                                        TargetName="border"
+                                        Value="#524E4F" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="Services_MenuItem_With_Dropdown"
+               TargetType="MenuItem">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type MenuItem}">
+                        <Border x:Name="border"
+                                Background="#363435"
+                                BorderThickness="0"
+                                Height="30"
+                                Width="145">
+                            <Grid>
+                                <!--// Icon //-->
+                                <ContentPresenter ContentSource="Icon"
+                                                  HorizontalAlignment="Left"
+                                                  VerticalAlignment="Center"
+                                                  Height="25"
+                                                  Width="25"
+                                                  Margin="5,0,0,0" />
+
+                                <!--// Text //-->
+                                <ContentPresenter ContentSource="Header"
+                                                  TextBlock.Foreground="#D3D7DC"
+                                                  TextBlock.FontFamily="Rubik Medium"
+                                                  TextBlock.FontSize="15"
+                                                  HorizontalAlignment="Left"
+                                                  VerticalAlignment="Center"
+                                                  Margin="40,0,0,0" />
+
+                                <!--// Dropdown Icon //-->
+                                <Image Source="Assets/img_services_dropdown.png"
+                                       Stretch="None"
+                                       HorizontalAlignment="Right"
+                                       VerticalAlignment="Center"
+                                       Margin="0,0,10,0" />
+
+                                <!--// Popup //-->
+                                <Popup x:Name="PART_Popup"
+                                       AllowsTransparency="True"
+                                       IsOpen="{Binding IsSubmenuOpen, RelativeSource={RelativeSource TemplatedParent}}"
+                                       Placement="Bottom"
+                                       PopupAnimation="{DynamicResource {x:Static SystemParameters.MenuPopupAnimationKey}}">
+
+                                    <Border x:Name="SubMenuBorder"
+                                            Background="#484546"
+                                            BorderBrush="#484546">
+
+                                        <ScrollViewer x:Name="SubMenuScrollViewer"
+                                                      Style="{DynamicResource {ComponentResourceKey ResourceId=MenuScrollViewer,TypeInTargetAssembly={x:Type FrameworkElement}}}">
+
+                                            <Grid RenderOptions.ClearTypeHint="Enabled">
+
+                                                <Canvas HorizontalAlignment="Left"
+                                                        VerticalAlignment="Top" />
+
+                                                <ItemsPresenter x:Name="ItemsPresenter" />
+
+                                            </Grid>
+                                        </ScrollViewer>
+                                    </Border>
+                                </Popup>
+                            </Grid>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsSuspendingPopupAnimation"
+                                     Value="True">
+                                <Setter Property="PopupAnimation"
+                                        TargetName="PART_Popup"
+                                        Value="None" />
+                            </Trigger>
+                            <Trigger Property="IsHighlighted"
+                                     Value="True">
+                                <Setter Property="Background"
+                                        TargetName="border"
+                                        Value="#524E4F" />
+                                <Setter Property="BorderBrush"
+                                        TargetName="border"
+                                        Value="#524E4F" />
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="Services_Sub_MenuItem"
+               TargetType="MenuItem">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type MenuItem}">
+                        <Border x:Name="border"
+                                Background="#363435"
+                                BorderThickness="0">
+                            <Grid>
+                                <!--// Icon //-->
+                                <ContentPresenter ContentSource="Icon"
+                                                  HorizontalAlignment="Left"
+                                                  VerticalAlignment="Center"
+                                                  Height="18"
+                                                  Width="18"
+                                                  Margin="8,0,0,0" />
+                                <!--// Text //-->
+                                <ContentPresenter ContentSource="Header"
+                                                  TextBlock.Foreground="#D3D7DC"
+                                                  TextBlock.FontFamily="Rubik Medium"
+                                                  TextBlock.FontSize="15"
+                                                  HorizontalAlignment="Left"
+                                                  VerticalAlignment="Center"
+                                                  Margin="35,0,0,0" />
+
+                                <Grid x:Name="Highlighter"
+                                      Height="35"
+                                      Width="2"
+                                      Background="#FFFFFF"
+                                      HorizontalAlignment="Left"
+                                      VerticalAlignment="Center"
+                                      Visibility="Collapsed" />
+
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsHighlighted"
+                                     Value="True">
+                                <Setter Property="Background"
+                                        TargetName="border"
+                                        Value="#3E3C3D" />
+                                <Setter Property="BorderBrush"
+                                        TargetName="border"
+                                        Value="#3E3C3D" />
+                                <Setter Property="Visibility"
+                                        TargetName="Highlighter"
+                                        Value="Visible" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="Mobile_App_MenuItem_With_Dropdown"
+               TargetType="MenuItem">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type MenuItem}">
+                        <Border x:Name="border"
+                                Background="#363435"
+                                BorderThickness="0">
+                            <Grid>
+                                <!--// Icon //-->
+                                <ContentPresenter ContentSource="Icon"
+                                                  HorizontalAlignment="Left"
+                                                  VerticalAlignment="Center"
+                                                  Height="18"
+                                                  Width="18"
+                                                  Margin="8,0,0,0" />
+
+                                <!--// Text //-->
+                                <ContentPresenter ContentSource="Header"
+                                                  TextBlock.Foreground="#D3D7DC"
+                                                  TextBlock.FontFamily="Rubik Medium"
+                                                  TextBlock.FontSize="15"
+                                                  HorizontalAlignment="Left"
+                                                  VerticalAlignment="Center"
+                                                  Margin="35,0,0,0" />
+
+                                <Grid x:Name="Highlighter"
+                                      Height="35"
+                                      Width="2"
+                                      Background="#FFFFFF"
+                                      HorizontalAlignment="Left"
+                                      VerticalAlignment="Center"
+                                      Visibility="Collapsed" />
+
+                                <!--// Dropdown Icon //-->
+                                <Image Source="Assets/img_mobile_app_dropdown.png"
+                                       Stretch="None"
+                                       HorizontalAlignment="Right"
+                                       VerticalAlignment="Center"
+                                       Margin="0,0,8,0" />
+
+                                <!--// Popup //-->
+                                <Popup x:Name="PART_Popup"
+                                       AllowsTransparency="True"
+                                       IsOpen="{Binding IsSubmenuOpen, RelativeSource={RelativeSource TemplatedParent}}"
+                                       Placement="Right"
+                                       PopupAnimation="{DynamicResource {x:Static SystemParameters.MenuPopupAnimationKey}}">
+
+                                    <Border x:Name="SubMenuBorder"
+                                            Background="#484546"
+                                            BorderBrush="#484546">
+
+                                        <ScrollViewer x:Name="SubMenuScrollViewer"
+                                                      Style="{DynamicResource {ComponentResourceKey ResourceId=MenuScrollViewer,TypeInTargetAssembly={x:Type FrameworkElement}}}">
+
+                                            <Grid RenderOptions.ClearTypeHint="Enabled">
+
+                                                <Canvas HorizontalAlignment="Left"
+                                                        VerticalAlignment="Top" />
+
+                                                <ItemsPresenter x:Name="ItemsPresenter" />
+
+                                            </Grid>
+                                        </ScrollViewer>
+                                    </Border>
+                                </Popup>
+                            </Grid>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsSuspendingPopupAnimation"
+                                     Value="True">
+                                <Setter Property="PopupAnimation"
+                                        TargetName="PART_Popup"
+                                        Value="None" />
+                            </Trigger>
+                            <Trigger Property="IsHighlighted"
+                                     Value="True">
+                                <Setter Property="Background"
+                                        TargetName="border"
+                                        Value="#3E3C3D" />
+                                <Setter Property="BorderBrush"
+                                        TargetName="border"
+                                        Value="#3E3C3D" />
+                                <Setter Property="Visibility"
+                                        TargetName="Highlighter"
+                                        Value="Visible" />
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="Mobile_App_Sub_MenuItem"
+               TargetType="MenuItem">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type MenuItem}">
+                        <Border x:Name="border"
+                                Background="#363435"
+                                BorderThickness="0">
+                            <Grid>
+                                <!--// Icon //-->
+                                <ContentPresenter ContentSource="Icon"
+                                                  HorizontalAlignment="Left"
+                                                  VerticalAlignment="Center"
+                                                  Height="18"
+                                                  Width="18"
+                                                  Margin="8,0,0,0" />
+                                <!--// Text //-->
+                                <ContentPresenter ContentSource="Header"
+                                                  TextBlock.Foreground="#D3D7DC"
+                                                  TextBlock.FontFamily="Rubik Medium"
+                                                  TextBlock.FontSize="15"
+                                                  HorizontalAlignment="Left"
+                                                  VerticalAlignment="Center"
+                                                  Margin="35,0,0,0" />
+
+                                <Grid x:Name="Highlighter"
+                                      Height="35"
+                                      Width="2"
+                                      Background="#FFFFFF"
+                                      HorizontalAlignment="Left"
+                                      VerticalAlignment="Center"
+                                      Visibility="Collapsed" />
+
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsHighlighted"
+                                     Value="True">
+                                <Setter Property="Background"
+                                        TargetName="border"
+                                        Value="#3E3C3D" />
+                                <Setter Property="BorderBrush"
+                                        TargetName="border"
+                                        Value="#3E3C3D" />
+                                <Setter Property="Visibility"
+                                        TargetName="Highlighter"
+                                        Value="Visible" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!--// Close App Button Style //-->
+        <Style x:Key="CloseAppStyle"
+               TargetType="{x:Type Button}">
+
+            <Setter Property="Height"
+                    Value="25" />
+            <Setter Property="Width"
+                    Value="25" />
+            <Setter Property="HorizontalAlignment"
+                    Value="Right" />
+            <Setter Property="VerticalAlignment"
+                    Value="Top" />
+            <Setter Property="Margin"
+                    Value="0,40,40,0" />
+
+            <Setter Property="Template">
+
+                <Setter.Value>
+
+                    <ControlTemplate TargetType="{x:Type Button}">
+
+                        <Border x:Name="border"
+                                BorderThickness="0"
+                                Background="{StaticResource close_mo}" />
+
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsMouseOver"
+                                     Value="True">
+
+                                <Setter Property="Background"
+                                        TargetName="border"
+                                        Value="{StaticResource close_mo}" />
+
+                            </Trigger>
+
+                            <Trigger Property="IsPressed"
+                                     Value="True">
+
+                                <Setter Property="Background"
+                                        TargetName="border"
+                                        Value="{StaticResource close_mo}" />
+
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
     </Window.Resources>
+
 
 
     <DockPanel  >
         <DockPanel.Background>
             <LinearGradientBrush>
-                <GradientStop Color="#204da5" Offset="0.0"/>
-                <GradientStop Color="#6cc4d5" Offset="1"/>
+                <GradientStop Color="Gray" Offset="0.0"/>
+                <GradientStop Color="#B0B7c0" Offset="1"/>
             </LinearGradientBrush>
         </DockPanel.Background>
 
@@ -47,7 +432,7 @@
 
                     <Button.Background>
 
-                        <ImageBrush ImageSource="Assets/img_user.png"
+                        <ImageBrush ImageSource="Assets/customer_80px.png"
                                 Stretch="Uniform" />
 
                     </Button.Background>
@@ -94,411 +479,197 @@
         <!--// home content //-->
         <Grid DockPanel.Dock="Bottom">
             <Grid.RowDefinitions>
+                <RowDefinition Height="70" />
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="120"/>
             </Grid.RowDefinitions>
 
-            <DockPanel  Grid.Row="0">
+
+            <Grid Grid.Row="0">
+                <!--// Background //-->
+                <Border 
+                Width="750"
+                CornerRadius="25"
+                Background="#524E4F">
+                    <Border.Effect>
+                        <DropShadowEffect Color="#000000"
+                                  Opacity="0.5"
+                                  Direction="90"
+                                  ShadowDepth="2"
+                                  BlurRadius="35" />
+                    </Border.Effect>
+                </Border>
+
+                <!--// Menu Border //-->
+                <Border Height="40"
+                Width="640"
+                Background="#363435"
+                BorderBrush="#363435"
+                BorderThickness="3"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Center"
+                CornerRadius="5" Margin="0 10 0 0" />
+
+                <!--// Menu //-->
+                <Menu Height="30"
+              Width="630"
+              Background="#363435"
+              VerticalAlignment="Top"
+              HorizontalAlignment="Center" 
+              Margin="0 20 0 0">
+
+                    <!--// Home //-->
+                    <MenuItem Header="الرئيسيه"
+                      Height="30"
+                      Width="98"
+                      Style="{StaticResource Main_MenuItem}" Click="MenuItem_Click">
+                        <MenuItem.Icon>
+                            <Image Source="Assets/img_home.png"
+                           Stretch="Uniform"/>
+                        </MenuItem.Icon>
+                    </MenuItem >
+
+                    <!--// About Us //-->
+                    <MenuItem Header="العملاء"
+                      Height="30"
+                      Width="130"
+                      Style="{StaticResource Main_MenuItem}" Click="MenuItem_Click_1" >
+                        <MenuItem.Icon>
+                            <Image Source="Assets/img_about_us.png"
+                           Stretch="Uniform" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+
+                    <!--// Services //-->
+                    <MenuItem Header="الخدمات"
+                      Style="{StaticResource Services_MenuItem_With_Dropdown}">
+                        <MenuItem.Icon>
+                            <Image Source="Assets/img_services.png"
+                           Stretch="Uniform" />
+                        </MenuItem.Icon>
+
+                        <MenuItem Header="Web Design"
+                          Height="35"
+                          Width="175"
+                          Style="{StaticResource Services_Sub_MenuItem}">
+                            <MenuItem.Icon>
+                                <Image Source="Assets/img_web_design.png"
+                               Stretch="Uniform" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+
+                        <MenuItem Header="UI / UX Design"
+                          Height="35"
+                          Width="175"
+                          Style="{StaticResource Services_Sub_MenuItem}">
+                            <MenuItem.Icon>
+                                <Image Source="Assets/img_ui_ux_design.png"
+                               Stretch="Uniform" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+
+                        <MenuItem Header="Graphic Design"
+                          Height="35"
+                          Width="175"
+                          Style="{StaticResource Services_Sub_MenuItem}">
+                            <MenuItem.Icon>
+                                <Image Source="Assets/img_graphic_design.png"
+                               Stretch="Uniform" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+
+                        <MenuItem Header="Mobile App"
+                          Height="35"
+                          Width="175"
+                          Style="{StaticResource Mobile_App_MenuItem_With_Dropdown}">
+                            <MenuItem.Icon>
+                                <Image Source="Assets/img_mobile_app.png"
+                               Stretch="Uniform" />
+                            </MenuItem.Icon>
+
+                            <MenuItem Header="Android App"
+                              Height="35"
+                              Width="160"
+                              Style="{StaticResource Mobile_App_Sub_MenuItem}">
+                                <MenuItem.Icon>
+                                    <Image Source="Assets/img_app.png"
+                                   Stretch="Uniform" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+
+                            <MenuItem Header="iOS App"
+                              Height="35"
+                              Width="160"
+                              Style="{StaticResource Mobile_App_Sub_MenuItem}">
+                                <MenuItem.Icon>
+                                    <Image Source="Assets/img_app.png"
+                                   Stretch="Uniform" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+
+                            <MenuItem Header=".NET MAUI App"
+                              Height="35"
+                              Width="160"
+                              Style="{StaticResource Mobile_App_Sub_MenuItem}">
+                                <MenuItem.Icon>
+                                    <Image Source="Assets/img_app.png"
+                                   Stretch="Uniform" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+
+                            <MenuItem Header="Flutter App"
+                              Height="35"
+                              Width="160"
+                              Style="{StaticResource Mobile_App_Sub_MenuItem}">
+                                <MenuItem.Icon>
+                                    <Image Source="Assets/img_app.png"
+                                   Stretch="Uniform" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+
+                            <MenuItem Header="Unity App"
+                              Height="35"
+                              Width="160"
+                              Style="{StaticResource Mobile_App_Sub_MenuItem}">
+                                <MenuItem.Icon>
+                                    <Image Source="Assets/img_app.png"
+                                   Stretch="Uniform" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+
+                        </MenuItem>
+
+                    </MenuItem>
+
+                    <!--// Portfolio //-->
+                    <MenuItem Header="المنتجات"
+                      Height="30"
+                      Width="135"
+                      Style="{StaticResource Main_MenuItem}" Click="MenuItem_Click_2">
+                        <MenuItem.Icon>
+                            <Image Source="Assets/img_portfolio.png"
+                           Stretch="Uniform" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+
+                    <!--// Contact //-->
+                    <MenuItem Header="التواصل"
+                      Height="30"
+                      Width="122"
+                      Style="{StaticResource Main_MenuItem}">
+                        <MenuItem.Icon>
+                            <Image Source="Assets/img_contact.png"
+                           Stretch="Uniform" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </Menu>
+            </Grid>
+            <DockPanel  Grid.Row="1" Margin="0 20 0 10">
                 <!--body content home window  here -->
 
 
                 <ContentControl Content="{Binding}"/>
 
             </DockPanel>
-            <Grid Grid.Row="1">
-
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="740" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-
-                <Border Grid.Column="1"
-                        Background="#323345"
-                        CornerRadius="10,10,0,0"
-                        Margin="0,15,0,0">
-
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="20" />
-                            <ColumnDefinition Width="70" />
-                            <ColumnDefinition Width="70" />
-                            <ColumnDefinition Width="70" />
-                            <ColumnDefinition Width="70" />
-                            <ColumnDefinition Width="70" />
-                            <ColumnDefinition Width="70" />
-                            <ColumnDefinition Width="70" />
-                            <ColumnDefinition Width="70" />
-                            <ColumnDefinition Width="70" />
-                            <ColumnDefinition Width="70" />
-                            <ColumnDefinition Width="20" />
-                        </Grid.ColumnDefinitions>
-
-                        <!--// Home //-->
-
-                        <Button Grid.Column="1"
-                                x:Name="home"
-                                Style="{StaticResource DockBtnStyle}" Click="home_Click" >
-
-                            <Button.Background>
-
-                                <ImageBrush ImageSource="Assets/img_home.png"
-                                            Stretch="Uniform" />
-
-                            </Button.Background>
-
-                            <Popup Width="70"
-                                   HorizontalOffset="-12"
-                                   PlacementTarget="{Binding ElementName=home}"
-                                   IsOpen="{Binding ElementName=home, Path=IsMouseOver, Mode=OneWay}"
-                                   Style="{StaticResource PopupStyle}">
-
-                                <Grid>
-
-                                    <Border Style="{StaticResource border}">
-
-                                        <TextBlock Text="Home"
-                                                   Style="{StaticResource PopupText}" />
-
-                                    </Border>
-
-                                    <Path Style="{StaticResource ArrowPath}" />
-
-                                </Grid>
-
-                            </Popup>
-
-                        </Button>
-
-                        <!--// Settings //-->
-
-                        <Button Grid.Column="2"
-                                x:Name="setting"
-                                Style="{StaticResource DockBtnStyle}" Click="setting_Click">
-
-                            <Button.Background>
-
-                                <ImageBrush ImageSource="Assets/img_settings.png"
-                                            Stretch="Uniform" />
-
-                            </Button.Background>
-
-                            <Popup Width="85"
-                                   HorizontalOffset="-20"
-                                   PlacementTarget="{Binding ElementName=setting}"
-                                   IsOpen="{Binding ElementName=setting, Path=IsMouseOver, Mode=OneWay}"
-                                   Style="{StaticResource PopupStyle}">
-
-                                <Grid>
-
-                                    <Border Style="{StaticResource border}">
-
-                                        <TextBlock Text="Settings"
-                                                   Style="{StaticResource PopupText}" />
-
-                                    </Border>
-
-                                    <Path Style="{StaticResource ArrowPath}" />
-
-                                </Grid>
-
-                            </Popup>
-
-                        </Button>
-
-                        <!--// Mail //-->
-
-                        <Button Grid.Column="3"
-                                x:Name="mail"
-                                Style="{StaticResource DockBtnStyle}" Click="mail_Click" >
-
-                            <Button.Background>
-
-                                <ImageBrush ImageSource="Assets/img_mail.png"
-                                            Stretch="Uniform" />
-
-                            </Button.Background>
-
-                            <Popup Width="60"
-                                   HorizontalOffset="-6"
-                                   PlacementTarget="{Binding ElementName=mail}"
-                                   IsOpen="{Binding ElementName=mail, Path=IsMouseOver, Mode=OneWay}"
-                                   Style="{StaticResource PopupStyle}">
-
-                                <Grid>
-
-                                    <Border Style="{StaticResource border}">
-
-                                        <TextBlock Text="Mail"
-                                                   Style="{StaticResource PopupText}" />
-
-                                    </Border>
-
-                                    <Path Style="{StaticResource ArrowPath}" />
-
-                                </Grid>
-
-                            </Popup>
-
-                        </Button>
-
-                        <!--// Visual Studio //-->
-
-                        <Button Grid.Column="4"
-                                x:Name="vs"
-                                Style="{StaticResource DockBtnStyle}">
-
-                            <Button.Background>
-
-                                <ImageBrush ImageSource="Assets/img_vs.png"
-                                            Stretch="Uniform" />
-
-                            </Button.Background>
-
-                            <Popup Width="118"
-                                   HorizontalOffset="-35"
-                                   PlacementTarget="{Binding ElementName=vs}"
-                                   IsOpen="{Binding ElementName=vs, Path=IsMouseOver, Mode=OneWay}"
-                                   Style="{StaticResource PopupStyle}">
-
-                                <Grid>
-
-                                    <Border Style="{StaticResource border}">
-
-                                        <TextBlock Text="Visual Studio"
-                                                   Style="{StaticResource PopupText}" />
-
-                                    </Border>
-
-                                    <Path Style="{StaticResource ArrowPath}" />
-
-                                </Grid>
-
-                            </Popup>
-
-                        </Button>
-
-                        <!--// Chrome //-->
-
-                        <Button Grid.Column="5"
-                                x:Name="chrome"
-                                Style="{StaticResource DockBtnStyle}">
-
-                            <Button.Background>
-
-                                <ImageBrush ImageSource="Assets/img_chrome.png"
-                                            Stretch="Uniform" />
-
-                            </Button.Background>
-
-                            <Popup Width="85"
-                                   HorizontalOffset="-19"
-                                   PlacementTarget="{Binding ElementName=chrome}"
-                                   IsOpen="{Binding ElementName=chrome, Path=IsMouseOver, Mode=OneWay}"
-                                   Style="{StaticResource PopupStyle}">
-
-                                <Grid>
-
-                                    <Border Style="{StaticResource border}">
-
-                                        <TextBlock Text="Chrome"
-                                                   Style="{StaticResource PopupText}" />
-
-                                    </Border>
-
-                                    <Path Style="{StaticResource ArrowPath}" />
-
-                                </Grid>
-
-                            </Popup>
-
-                        </Button>
-
-                        <!--// YouTube //-->
-
-                        <Button Grid.Column="6"
-                                x:Name="youtube"
-                                Style="{StaticResource DockBtnStyle}">
-
-                            <Button.Background>
-
-                                <ImageBrush ImageSource="Assets/img_youtube.png"
-                                            Stretch="Uniform" />
-
-                            </Button.Background>
-
-                            <Popup Width="85"
-                                   HorizontalOffset="-18"
-                                   PlacementTarget="{Binding ElementName=youtube}"
-                                   IsOpen="{Binding ElementName=youtube, Path=IsMouseOver, Mode=OneWay}"
-                                   Style="{StaticResource PopupStyle}">
-
-                                <Grid>
-
-                                    <Border Style="{StaticResource border}">
-
-                                        <TextBlock Text="YouTube"
-                                                   Style="{StaticResource PopupText}" />
-
-                                    </Border>
-
-                                    <Path Style="{StaticResource ArrowPath}" />
-
-                                </Grid>
-
-                            </Popup>
-
-                        </Button>
-
-                        <!--// Word //-->
-
-                        <Button Grid.Column="7"
-                                x:Name="word"
-                                Style="{StaticResource DockBtnStyle}">
-
-                            <Button.Background>
-
-                                <ImageBrush ImageSource="Assets/img_word.png"
-                                            Stretch="Uniform" />
-
-                            </Button.Background>
-
-                            <Popup Width="60"
-                                   HorizontalOffset="-8"
-                                   PlacementTarget="{Binding ElementName=word}"
-                                   IsOpen="{Binding ElementName=word, Path=IsMouseOver, Mode=OneWay}"
-                                   Style="{StaticResource PopupStyle}">
-
-                                <Grid>
-
-                                    <Border Style="{StaticResource border}">
-
-                                        <TextBlock Text="Word"
-                                                   Style="{StaticResource PopupText}" />
-
-                                    </Border>
-
-                                    <Path Style="{StaticResource ArrowPath}" />
-
-                                </Grid>
-
-                            </Popup>
-
-                        </Button>
-
-                        <!--// Photoshop //-->
-
-                        <Button Grid.Column="8"
-                                x:Name="ps"
-                                Style="{StaticResource DockBtnStyle}">
-
-                            <Button.Background>
-
-                                <ImageBrush ImageSource="Assets/img_photoshop.png"
-                                            Stretch="Uniform" />
-
-                            </Button.Background>
-
-                            <Popup Width="105"
-                                   HorizontalOffset="-27"
-                                   PlacementTarget="{Binding ElementName=ps}"
-                                   IsOpen="{Binding ElementName=ps, Path=IsMouseOver, Mode=OneWay}"
-                                   Style="{StaticResource PopupStyle}">
-
-                                <Grid>
-
-                                    <Border Style="{StaticResource border}">
-
-                                        <TextBlock Text="Photoshop"
-                                                   Style="{StaticResource PopupText}" />
-
-                                    </Border>
-
-                                    <Path Style="{StaticResource ArrowPath}" />
-
-                                </Grid>
-
-                            </Popup>
-
-                        </Button>
-
-                        <!--// Downloads //-->
-
-                        <Button Grid.Column="9"
-                                x:Name="download"
-                                Style="{StaticResource DockBtnStyle}">
-
-                            <Button.Background>
-
-                                <ImageBrush ImageSource="Assets/img_downloads.png"
-                                            Stretch="Uniform" />
-
-                            </Button.Background>
-
-                            <Popup Width="105"
-                                   HorizontalOffset="-28"
-                                   PlacementTarget="{Binding ElementName=download}"
-                                   IsOpen="{Binding ElementName=download, Path=IsMouseOver, Mode=OneWay}"
-                                   Style="{StaticResource PopupStyle}">
-
-                                <Grid>
-
-                                    <Border Style="{StaticResource border}">
-
-                                        <TextBlock Text="Downloads"
-                                                   Style="{StaticResource PopupText}" />
-
-                                    </Border>
-
-                                    <Path Style="{StaticResource ArrowPath}" />
-
-                                </Grid>
-
-                            </Popup>
-
-                        </Button>
-
-                        <!--// Trash //-->
-
-                        <Button Grid.Column="10"
-                                x:Name="trash"
-                                Style="{StaticResource DockBtnStyle}">
-
-                            <Button.Background>
-
-                                <ImageBrush ImageSource="Assets/img_trash.png"
-                                            Stretch="Uniform" />
-
-                            </Button.Background>
-
-                            <Popup Width="65"
-                                   HorizontalOffset="-10"
-                                   PlacementTarget="{Binding ElementName=trash}"
-                                   IsOpen="{Binding ElementName=trash, Path=IsMouseOver, Mode=OneWay}"
-                                   Style="{StaticResource PopupStyle}">
-
-                                <Grid>
-
-                                    <Border Style="{StaticResource border}">
-
-                                        <TextBlock Text="Trash"
-                                                   Style="{StaticResource PopupText}" />
-
-                                    </Border>
-
-                                    <Path Style="{StaticResource ArrowPath}" />
-
-                                </Grid>
-
-                            </Popup>
-
-                        </Button>
-
-                    </Grid>
-
-                </Border>
-
-            </Grid>
         </Grid>
     </DockPanel>
 

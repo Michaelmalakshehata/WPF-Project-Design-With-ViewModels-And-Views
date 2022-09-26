@@ -288,9 +288,9 @@
 
     <!--// Close Button Style //-->
 
-    <ImageBrush x:Key="close_def"
+    <!--<ImageBrush x:Key="close_def"
                 ImageSource="/Assets/shutdown_def.png"
-                Stretch="Uniform" />
+                Stretch="Uniform" />-->
 
     <ImageBrush x:Key="close_mo"
                 ImageSource="/Assets/shutdown_mo.png"
@@ -317,7 +317,7 @@
 
                     <Border x:Name="border"
                             BorderThickness="0"
-                            Background="{StaticResource close_def}" />
+                            Background="{StaticResource close_mo}" />
 
                     <ControlTemplate.Triggers>
 

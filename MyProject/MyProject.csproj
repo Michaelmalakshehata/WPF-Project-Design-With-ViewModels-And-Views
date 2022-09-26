@@ -8,21 +8,33 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Assets\img_chrome.png" />
-    <None Remove="Assets\img_downloads.png" />
+    <None Remove="Assets\customer_80px.png" />
+    <None Remove="Assets\img_about_us.png" />
+    <None Remove="Assets\img_app.png" />
+    <None Remove="Assets\img_contact.png" />
+    <None Remove="Assets\img_graphic_design.png" />
     <None Remove="Assets\img_home.png" />
-    <None Remove="Assets\img_mail.png" />
-    <None Remove="Assets\img_photoshop.png" />
-    <None Remove="Assets\img_settings.png" />
-    <None Remove="Assets\img_trash.png" />
+    <None Remove="Assets\img_mobile_app.png" />
+    <None Remove="Assets\img_mobile_app_dropdown.png" />
+    <None Remove="Assets\img_portfolio.png" />
+    <None Remove="Assets\img_services.png" />
+    <None Remove="Assets\img_services_dropdown.png" />
+    <None Remove="Assets\img_ui_ux_design.png" />
     <None Remove="Assets\img_user.png" />
-    <None Remove="Assets\img_vs.png" />
-    <None Remove="Assets\img_word.png" />
-    <None Remove="Assets\img_youtube.png" />
+    <None Remove="Assets\img_web_design.png" />
     <None Remove="Assets\maximize_window_80px.png" />
     <None Remove="Assets\minimize_window_80px.png" />
     <None Remove="Assets\shutdown_def.png" />
     <None Remove="Assets\shutdown_mo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\customer_80px.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\img_portfolio.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>
@@ -32,37 +44,40 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Assets\img_chrome.png">
+    <Resource Include="Assets\img_about_us.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Assets\img_downloads.png">
+    <Resource Include="Assets\img_app.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\img_contact.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\img_graphic_design.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\img_home.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Assets\img_mail.png">
+    <Resource Include="Assets\img_mobile_app.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Assets\img_photoshop.png">
+    <Resource Include="Assets\img_mobile_app_dropdown.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Assets\img_settings.png">
+    <Resource Include="Assets\img_services.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Assets\img_trash.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <Resource Include="Assets\img_services_dropdown.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\img_ui_ux_design.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\img_user.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Assets\img_vs.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\img_word.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\img_youtube.png">
+    <Resource Include="Assets\img_web_design.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\maximize_window_80px.png">
